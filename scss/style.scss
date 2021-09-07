@@ -1,0 +1,140 @@
+@import './color.scss';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+* {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+h1,
+h2 {
+  margin: 0;
+  color: var(--Very-Dark-Grayish-Blue);
+  line-height: 1.5;
+}
+
+span {
+  color: var(--Desaturated-Dark-Blue);
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--Light-Grayish-Blue);
+  font-family: 'Manrope', sans-serif;
+}
+
+.container {
+  max-width: 350px;
+  background: #fff;
+  margin: 8em auto 1em;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  .drawer {
+    width: 350px;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+  .article {
+    padding: 2em 2em 1em;
+    &__heading {
+      margin-bottom: 10px;
+    }
+    &__profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
+      .avatar {
+        width: 60px;
+        border-radius: 50%;
+      }
+    }
+    &__user {
+      margin-left: -40px;
+    }
+
+    .share {
+      padding: 5px;
+      background: var(--Light-Grayish-Blue);
+      border-radius: 50%;
+      position: relative;
+      top: 3px;
+      z-index: 1;
+      &:hover {
+        color: var(--Desaturated-Dark-Blue);
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+  .social {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: var(--Very-Dark-Grayish-Blue);
+    padding: 1em;
+    margin: auto;
+    position: absolute;
+    height: 9%;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+
+    i {
+      margin-left: 10px;
+      font-size: 1.3em;
+      &:hover {
+        color: var(--Light-Grayish-Blue);
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 800px) {
+  .container {
+    max-width: 750px;
+    display: flex;
+    position: relative;
+    overflow: visible;
+    .drawer {
+      flex: 1;
+      height: auto;
+      border-top-right-radius: 0;
+    }
+    .article {
+      flex: 2;
+    }
+    .social {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      border-radius: 10px;
+      position: absolute;
+      left: 570px;
+      bottom: 80px;
+      z-index: 1;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 30%;
+        height: 50%;
+        background: var(--Very-Dark-Grayish-Blue);
+        bottom: 0;
+        z-index: -1;
+        top: 30px;
+        left: 85px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
